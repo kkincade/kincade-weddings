@@ -1,0 +1,15 @@
+{{!-- An invisible flex item to right-align the info link. --}}
+<div class='hidden-spacer'>Spacer</div>
+
+{{#link-to 'index' title='Home' class='branding'}}
+    <img class='logo' src='assets/images/m-and-k-logo.png' />
+    <p class='slogan'>We do Weddings</p>
+{{/link-to}}
+
+<div class='links-container'>
+    {{#each icons as |icon|}}
+        {{#link-to icon title=icon class='header-link'}}
+            {{svg/svg-symbol icon=icon}}
+        {{/link-to}}
+    {{/each}}
+</div>

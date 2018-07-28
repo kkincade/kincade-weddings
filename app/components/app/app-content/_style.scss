@@ -1,0 +1,42 @@
+@import '../../../styles/globals';
+@import '../../../styles/colors';
+
+html body #app-site {
+    #app-content {
+        position: relative;
+        transition: $standard-transition;
+        width: calc(100% - #{$app-header-width + $app-menu-width});
+
+        .background-image {
+            background: url('/assets/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -10;
+
+            &:before {
+                background: rgba($white, 0.9);
+                content: '';
+                height: 100%;
+                position: absolute;
+                width: 100%;
+            }
+        }
+
+        .view-container {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+
+    &.media-mobile,
+    &.media-tablet {
+        #app-content {
+            flex-grow: 1;
+            margin-top: $app-header-height;
+        }
+    }
+}

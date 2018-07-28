@@ -1,0 +1,21 @@
+@import '../colors';
+
+html {
+    body {
+        .pika-single {
+            height: 224px;
+            width: 256px;
+
+            .is-selected {
+                .pika-button {
+                    background: $purple;
+                    box-shadow: none;
+                }
+            }
+
+            .pika-button:hover {
+                background: $grey;
+            }
+        }
+    }
+}

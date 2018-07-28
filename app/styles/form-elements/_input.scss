@@ -1,0 +1,25 @@
+@import '../globals';
+@import '../colors';
+
+html {
+    body {
+        input {
+            height: $base-grid-3x;
+        }
+
+        input,
+        textarea {
+            border: solid 1px $grey-light;
+            font-size: 16px;
+            padding: $base-grid;
+            transition: box-shadow $transition-fast,
+                        border $transition-fast;
+
+            &:focus {
+                border: solid 1px $grey;
+                box-shadow: 0 0 $base-grid-half 1px $black-20;
+                outline: none;
+            }
+        }
+    }
+}

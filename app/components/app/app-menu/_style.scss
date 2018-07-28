@@ -1,0 +1,45 @@
+@import '../../../styles/globals';
+@import '../../../styles/colors';
+
+html body {
+
+    #app-site {
+        #app-menu {
+            border-right: $standard-border;
+            display: flex;
+            opacity: 1;
+            transition: opacity $transition-fast ease-out,
+                        width $transition-slow ease-out;
+            width: $app-menu-width;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            a {
+                margin: auto;
+
+                .back-link {
+                    fill: $black-80;
+                    height: $base-grid-3x;
+                    width: $base-grid-3x;
+                }
+            }
+        }
+        // Responsive menu.
+        &.media-mobile,
+        &.media-tablet {
+            #app-menu {
+                width: $app-menu-width-mobile;
+            }
+        }
+    }
+
+    // Hide the back/menu button for the index route.
+    &.index:not(.video):not(.stylist) {
+        #app-site #app-menu {
+            opacity: 0;
+            width: 0;
+        }
+    }
+}

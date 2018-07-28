@@ -1,0 +1,9 @@
+@import '../../../styles/globals';
+
+html body {
+    #app-site {
+        display: flex;
+        height: 100%;
+        position: relative;
+    }
+}

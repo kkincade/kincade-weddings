@@ -1,0 +1,109 @@
+@import '../../../styles/globals';
+
+html body {
+    #app-site {
+        #app-header {
+            border-right: $standard-border;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: $standard-transition;
+            width: #{$app-header-width + $app-menu-width};
+
+            .hidden-spacer {
+                margin: $base-grid-2x auto auto;
+                visibility: hidden;
+            }
+
+            .branding {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+
+                .logo {
+                    margin: 0 auto;
+                    width: 100px;
+                }
+
+                .slogan {
+                    font-size: 16px;
+                    font-style: italic;
+                    margin: $base-grid 0 0;
+                }
+            }
+
+            .links-container {
+                align-items: center;
+                display: flex;
+                justify-content: space-around;
+                margin: auto $base-grid $base-grid-2x;
+                width: $base-grid * 24;
+
+                .svg-symbol {
+                    height: $base-grid-4x;
+                    width: $base-grid-4x;
+                }
+            }
+        }
+
+        // Responsive header.
+        &.media-mobile,
+        &.media-tablet {
+            #app-header {
+                align-items: center;
+                border-bottom: $standard-border;
+                flex-direction: row;
+                height: $app-header-height;
+                margin-left: $app-menu-width-mobile;
+                position: absolute;
+                width: calc(100% - #{$app-menu-width-mobile});
+
+                .hidden-spacer {
+                    display: none;
+                }
+
+                .branding {
+                    flex-direction: row;
+                    font-size: 16px;
+                    margin-left: $base-grid-2x;
+
+                    .logo {
+                        height: 50px;
+                        width: initial;
+                    }
+
+                    .slogan {
+                        margin: 0 0 0 $base-grid;
+                    }
+                }
+
+                .links-container {
+                    .header-link {
+                        margin: 0 $base-grid;
+                    }
+
+                    .svg-symbol {
+                        height: $base-grid-3x;
+                        width: $base-grid-3x;
+                    }
+                }
+            }
+        }
+    }
+
+    &.index:not(.video):not(.stylist) {
+        #app-site {
+            #app-header {
+                margin: 0;
+            }
+
+            &.media-mobile,
+            &.media-tablet {
+                #app-header {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

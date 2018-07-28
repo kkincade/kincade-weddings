@@ -1,0 +1,54 @@
+@import '../styles/globals';
+
+.contact-form {
+    $form-width: 600px;
+
+    margin: 0 auto;
+    width: $form-width;
+
+    textarea {
+        max-width: #{$form-width - $base-grid-2x - 2px};
+    }
+
+    .contact-info {
+        width: 100%;
+
+        .contact-name,
+        .wedding-info {
+            display: flex;
+
+            input {
+                flex: 1;
+
+                &:first-of-type {
+                    margin-right: $base-grid-2x;
+                }
+            }
+        }
+    }
+
+    button {
+        width: auto;
+    }
+
+    @media #{$tablet-portrait-and-smaller} {
+        width: auto;
+
+        .contact-info {
+            .wedding-info {
+                flex-direction: column;
+
+                input {
+                    &:first-of-type {
+                        margin-right: 0;
+                    }
+                }
+
+                .ember-power-select-trigger {
+                    margin-bottom: $base-grid-2x;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<div class='view-container'>
+    <div class='view-content'>
+        <div class='contact-form'>
+            {{contactRequest.name}}
+            {{#form-group title='Your Information' class='contact-info'}}
+                {{input value=name placeholder='Name'}}
+                {{input type='email' value=emailAddress placeholder='Email Address'}}
+
+                <div class='wedding-info'>
+                    {{pikaday-input placeholder='Wedding Date' format='MM.DD.YYYY' onSelection=(action (mut weddingDate))}}
+
+                    {{#power-select
+                        options=interestedInOptions
+                        placeholder='I\'m interested in...'
+                        searchEnabled=false
+                        selected=servicesInterestedIn
+                        onchange=(action (mut servicesInterestedIn))
+                        as |contactReason|
+                    }}
+                        {{contactReason}}
+                    {{/power-select}}
+                </div>
+
+                {{input placeholder='Venue' value=venue}}
+
+                {{textarea placeholder='How can we help you?' rows='10' value=content}}
+
+                {{#loading-button
+                    class='btn btn-primary'
+                    loaderStyle='zoom-in'
+                    action=(action 'sendContactRequest')
+                }}
+                    SEND
+                {{/loading-button}}
+            {{/form-group}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@import '../../styles/globals';
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea,
+    button {
+        margin-bottom: $base-grid-2x;
+    }
+}

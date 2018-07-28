@@ -1,0 +1,45 @@
+@import 'colors';
+@import 'globals';
+
+@mixin coloredButton($button-color, $add-dark-hover: false, $text-color: $white) {
+    background: $button-color;
+    color: $text-color;
+    cursor: pointer;
+    transition: background $transition-fast;
+
+    svg {
+        fill: $text-color;
+    }
+
+    $hover-color: $button-color;
+
+    @if ($add-dark-hover) {
+        $hover-color: darken($button-color, 8%);
+    }
+
+    &[aria-disabled='true'],
+    &:disabled {
+        cursor: default;
+        opacity: 0.7;
+
+        svg,
+        span,
+        &:after {
+            opacity: 0.4;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:not([aria-disabled='true']):not(:disabled) {
+        &:hover {
+            background: $hover-color;
+        }
+
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}

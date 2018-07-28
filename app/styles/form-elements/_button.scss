@@ -1,0 +1,24 @@
+@import '../globals';
+@import '../colors';
+@import '../mixins';
+
+html {
+    body {
+        button.btn {
+            @include coloredButton($grey, true);
+
+            border: none;
+            border-radius: 2px;
+            color: $white;
+            font-size: 16px;
+            padding: $base-grid $base-grid-2x;
+            text-decoration: none;
+            text-transform: uppercase;
+            user-select: none;
+
+            &.btn-primary {
+                @include coloredButton($purple, true);
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+//region Constants
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+//endregion
+
+//region Mixins
+
+@mixin create-font-face($path, $type, $weight) {
+    @font-face {
+        font-family: 'Catamaran';
+
+        src: url($path + 'Catamaran-' + $type + '.ttf') format('ttf');
+
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+@mixin catamaran-font() {
+    $path: 'catamaran/';
+    $default-font: sans-serif;
+
+    @include create-font-face($path, 'Light', $font-weight-light);
+    @include create-font-face($path, 'Regular', $font-weight-normal);
+    @include create-font-face($path, 'Medium', $font-weight-medium);
+    @include create-font-face($path, 'Bold', $font-weight-bold);
+
+    // Universally reducing the kerning.
+    * {
+        letter-spacing: -.006em;
+        text-rendering: optimizeLegibility;
+    }
+
+    // Set MarkFont to be the font-family for all things.
+    html,
+    input,
+    textarea,
+    keygen,
+    select,
+    button
+    {
+        font-family: 'Catamaran', $default-font;
+    }
+}
+
+//endregion
+
+@include catamaran-font;

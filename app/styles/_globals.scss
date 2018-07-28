@@ -1,0 +1,54 @@
+@import './grid';
+
+//region App Constants
+
+$app-header-height: 60px;
+$app-header-width: 240px;
+$app-menu-width: 60px;
+$app-menu-width-mobile: 40px;
+
+//endregion
+
+//region Borders
+
+$standard-border: 1px solid #DDDDDD;
+
+//endregion
+
+//region Transitions
+
+$transition-x-slow: 0.65s;
+$transition-slow: 0.5s;
+$transition-normal: 0.4s;
+$transition-fast: 0.3s;
+$transition-x-fast: 0.15s;
+
+$standard-transition: all $transition-fast ease;
+
+//endregion
+
+//region Media Query Breakpoints
+
+$break-xs: 400px;
+$break-small: 540px;
+$break-medium: 768px;
+$break-large: 1024px;
+$break-xl: 1700px;
+
+$phone-xs: "screen and (max-width: #{$break-xs})";
+$phone: "screen and (min-width: #{$break-xs + 1}) and (max-width: #{$break-small})";
+$tablet-portrait: "screen and (min-width: #{$break-small + 1}) and (max-width: #{$break-medium})";
+$tablet-landscape: "screen and (min-width: #{$break-medium + 1}) and (max-width: #{$break-large})";
+$desktop-xl: "screen and (min-width: #{$break-xl + 1})";
+
+$phone-and-smaller: "screen and (max-width: #{$break-small})";
+$tablet-portrait-and-smaller: "screen and (max-width: #{$break-medium})";
+$tablet-landscape-and-smaller: "screen and (max-width: #{$break-large})";
+$desktop-and-smaller: "screen and (max-width: #{$break-xl})";
+
+$phone-and-larger: "screen and (min-width: #{$break-xs + 1})";
+$tablet-portrait-and-larger: "screen and (min-width: #{$break-small + 1})";
+$tablet-landscape-and-larger: "screen and (min-width: #{$break-medium + 1})";
+$desktop-and-larger: "screen and (min-width: #{$break-large + 1})";
+
+//endregion

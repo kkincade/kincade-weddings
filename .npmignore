@@ -1,0 +1,17 @@
+/.idea/
+/dist
+/tmp
+/tests
+/config/ember-try.js
+.editorconfig
+.ember-cli
+.eslintrc.js
+.watchmanconfig
+.travis.yml
+ember-cli-build.js
+testem.js
+
+# ember-try
+.node_modules.ember-try/
+bower.json.ember-try
+package.json.ember-try
