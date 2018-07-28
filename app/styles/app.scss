@@ -1,5 +1,6 @@
 // Fonts.
 @import './fonts';
+@import './colors';
 
 // Application style.
 @import 'application/style';
@@ -16,3 +17,8 @@
 @import './form-elements';
 @import 'ember-power-select/themes/material';
 @import 'ember-power-select';
+@import 'ember-power-calendar';
+
+.demo-calendar-small {
+    @include ember-power-calendar($cell-size: 30px, $primary-color: $purple);
+}

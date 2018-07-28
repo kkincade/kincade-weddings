@@ -7,7 +7,8 @@
                 {{input type='email' value=emailAddress placeholder='Email Address'}}
 
                 <div class='wedding-info'>
-                    {{pikaday-input placeholder='Wedding Date' format='MM.DD.YYYY' onSelection=(action (mut weddingDate))}}
+                    {{date-picker placeholder='Wedding Date' selected=weddingDate}}
+                    {{!-- {{pikaday-input placeholder='Wedding Date' format='MM.DD.YYYY' onSelection=(action (mut weddingDate))}} --}}
 
                     {{#power-select
                         options=interestedInOptions

@@ -1,0 +1,24 @@
+{{#basic-dropdown as |dropdown|}}
+    <input 
+        type="text"
+        placeholder={{placeholder}}
+        data-ebd-id="{{dropdown.uniqueId}}-trigger"
+        onclick={{dropdown.actions.toggle}}
+        value={{if selected (moment-format selected 'MM.DD.YYYY')}}
+        readonly
+    >
+
+    {{#dropdown.content}}
+        {{#power-calendar
+            class='demo-calendar-small'
+            center=center
+            onCenterChange=(action (mut center) value='date')
+            selected=selected
+            onSelect=(action (mut selected) value='date')
+            as |calendar|
+        }}
+            {{calendar.nav}}
+            {{calendar.days}}
+        {{/power-calendar}}
+    {{/dropdown.content}}
+{{/basic-dropdown}}

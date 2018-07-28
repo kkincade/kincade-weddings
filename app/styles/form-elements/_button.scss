@@ -8,9 +8,9 @@ html {
             @include coloredButton($grey, true);
 
             border: none;
-            border-radius: 2px;
+            border-radius: $border-radius-px;
             color: $white;
-            font-size: 16px;
+            font-size: $base-grid-2x;
             padding: $base-grid $base-grid-2x;
             text-decoration: none;
             text-transform: uppercase;
