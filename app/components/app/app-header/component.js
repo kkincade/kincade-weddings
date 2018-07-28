@@ -5,9 +5,9 @@ export default Component.extend({
     tagName: 'header',
     elementId: 'app-header',
 
-    icons: computed('media.{isMobile,isTablet}', function () {
+    icons: computed('media.isMobile', function () {
         let icons =  [ 'about', 'contact', 'stylist', 'video' ];
 
-        return this.get('media.isMobile') ? icons.filter(icon => icon !== 'stylist' && icon !== 'video') : icons;
+        return this.media.isMobile ? icons.filter(icon => icon !== 'stylist' && icon !== 'video') : icons;
     })
 });
