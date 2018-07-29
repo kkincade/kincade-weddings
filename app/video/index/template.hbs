@@ -1,34 +1,16 @@
 <div class='view-container'>
+    {{header-nav title='videography.' links=links}}
 
-    <header>
-        <h1 class='occupation'>videography.</h1>
+    {{#section-header title='About'}}
+        <p>By trade, I am a Software Engineer. I actually built the very website you are visiting. I enjoy the aspect of creative design, which pours over into my love for videography.</p>
+    {{/section-header}}
 
-        <div class="dropdown">
-            <button class="btn">
-                Explore
-                {{svg/svg-symbol icon='chevron-down'}}
-            </button>
-            <div class="dropdown-content">
-                <a href="#pricing">Pricing</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#about">About Me</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="pricing">
-        <h2>Pricing</h2>
-        <p>Pricing</p>
-    </section>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
+    {{#section-header title='Portfolio'}}
         <p>Even in the high-tech age we live in, weddings are still considered one of the most important days in life. Each wedding has its own unique voice. A voice that deserves to be heard by friends, family, and future generations. Having been married myself, I fully understand the amount of time and energy that is involved in preparing for your big day. My passion is to capture these emotions and details and ensure they are given the attention they deserve.</p>
         <p>All of my videos are filmed and produced entirely by myself. I'll be there in the morning when the bridesmaids are getting ready, till late in the evening as the party dances on. </p>
-    </section>
+    {{/section-header}}
 
-    <section id="about">
-        <h2>About</h2>
-        <p>By trade, I am a Software Engineer. I actually built the very website you are visiting. I enjoy the aspect of creative design, which pours over into my love for videography.</p>
-    </section>
+    {{#section-header title='Pricing'}}
+        <p>Some content.</p>
+    {{/section-header}}
 </div>

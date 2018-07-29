@@ -1,28 +1,32 @@
 @import '../styles/globals';
 
-.contact-form {
+.contact-info {
     $form-width: 600px;
 
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     width: $form-width;
 
-    textarea {
-        max-width: #{$form-width - $base-grid-2x - 2px};
+    input,
+    textarea,
+    button {
+        margin-bottom: $base-grid-2x;
     }
 
-    .contact-info {
-        width: 100%;
+    textarea {
+        resize: none;
+    }
 
-        .contact-name,
-        .wedding-info {
-            display: flex;
+    .contact-name,
+    .wedding-info {
+        display: flex;
 
-            input {
-                flex: 1;
+        input {
+            flex: 1;
 
-                &:first-of-type {
-                    margin-right: $base-grid-2x;
-                }
+            &:first-of-type {
+                margin-right: $base-grid-2x;
             }
         }
     }
@@ -34,20 +38,18 @@
     @media #{$tablet-portrait-and-smaller} {
         width: auto;
 
-        .contact-info {
-            .wedding-info {
-                flex-direction: column;
+        .wedding-info {
+            flex-direction: column;
 
-                input {
-                    &:first-of-type {
-                        margin-right: 0;
-                    }
+            input {
+                &:first-of-type {
+                    margin-right: 0;
                 }
+            }
 
-                .ember-power-select-trigger {
-                    margin-bottom: $base-grid-2x;
-                    width: auto;
-                }
+            .ember-power-select-trigger {
+                margin-bottom: $base-grid-2x;
+                width: auto;
             }
         }
     }

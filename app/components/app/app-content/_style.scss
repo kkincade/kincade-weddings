@@ -5,7 +5,7 @@ html body #app-site {
     #app-content {
         position: relative;
         transition: $standard-transition;
-        width: calc(100% - #{$app-header-width + $app-menu-width});
+        width: 100%;
 
         .background-image {
             background: url('/assets/images/background.jpg') no-repeat center center fixed;
@@ -35,7 +35,7 @@ html body #app-site {
     &.media-mobile,
     &.media-tablet {
         #app-content {
-            flex-grow: 1;
+            // flex-grow: 1;
             margin-top: $app-header-height;
         }
     }

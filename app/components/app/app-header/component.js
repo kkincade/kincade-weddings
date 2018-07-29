@@ -11,6 +11,8 @@ export default Component.extend({
     icons: computed('media.isMobile', function () {
         let icons =  [ 'about', 'contact', 'stylist', 'video' ];
 
-        return this.media.isMobile ? icons.filter(icon => icon !== 'stylist' && icon !== 'video') : icons;
+        return this.media.isMobile 
+            ? icons.filter(icon => icon !== 'stylist' && icon !== 'video') 
+            : icons;
     })
 });

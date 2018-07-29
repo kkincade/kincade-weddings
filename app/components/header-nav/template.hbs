@@ -1,0 +1,13 @@
+<h1 class='occupation'>{{@title}}</h1>
+
+<div class="dropdown">
+    <button class="btn">
+        Explore
+        {{svg/svg-symbol icon='chevron-down'}}
+    </button>
+    <div class="dropdown-content">
+        {{#each formattedLinks as |link|}}
+            <a href={{link.href}}>{{link.name}}</a>
+        {{/each}}
+    </div>
+</div>

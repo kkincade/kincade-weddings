@@ -38,7 +38,6 @@ html body {
                 display: flex;
                 justify-content: space-around;
                 margin: auto $base-grid $base-grid-2x;
-                width: $base-grid * 24;
 
                 .svg-symbol {
                     height: $base-grid-4x;

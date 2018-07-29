@@ -5,14 +5,12 @@
     background-size: 100%;
 }
 
-html body {
-    #app-site {
-        #app-content {
-            .view-container.index {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-            }
+#app-site {
+    #app-content {
+        .view-container.index {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
             .main-title {
                 font-size: 4vw;
@@ -99,31 +97,31 @@ html body {
                 }
             }
         }
+    }
 
-        &.media-mobile {
-            #app-content {
-                .view-container.index {
-                    display: block;
-                }
+    &.media-mobile {
+        #app-content {
+            .view-container.index {
+                display: block;
+            }
 
-                .main-title {
-                    font-size: 20px;
-                }
+            .main-title {
+                font-size: 20px;
+            }
 
-                .profiles {
-                    flex-direction: column;
-                    margin: auto 0;
+            .profiles {
+                flex-direction: column;
+                margin: auto 0;
 
-                    .profile {
-                        margin-bottom: $base-grid-5x;
+                .profile {
+                    margin-bottom: $base-grid-5x;
 
-                        .picture {
-                            height: 25vh;
-                            width: 25vh;
+                    .picture {
+                        height: 25vh;
+                        width: 25vh;
 
-                            &:after {
-                                font-size: 3vh;
-                            }
+                        &:after {
+                            font-size: 3vh;
                         }
                     }
                 }

@@ -1,39 +1,39 @@
 <div class='view-container'>
     <div class='view-content'>
-        <div class='contact-form'>
-            {{contactRequest.name}}
-            {{#form-group title='Your Information' class='contact-info'}}
-                {{input value=name placeholder='Name'}}
-                {{input type='email' value=emailAddress placeholder='Email Address'}}
 
-                <div class='wedding-info'>
-                    {{date-picker placeholder='Wedding Date' selected=weddingDate}}
-                    {{!-- {{pikaday-input placeholder='Wedding Date' format='MM.DD.YYYY' onSelection=(action (mut weddingDate))}} --}}
+        <form class='contact-info form-group'>
+            <h4 class='form-group-title'>Your Information</h4>
+            
+            {{input value=name placeholder='Name'}}
+            {{input type='email' value=emailAddress placeholder='Email Address'}}
 
-                    {{#power-select
-                        options=interestedInOptions
-                        placeholder='I\'m interested in...'
-                        searchEnabled=false
-                        selected=servicesInterestedIn
-                        onchange=(action (mut servicesInterestedIn))
-                        as |contactReason|
-                    }}
-                        {{contactReason}}
-                    {{/power-select}}
-                </div>
+            <div class='wedding-info'>
+                {{date-picker placeholder='Wedding Date' selected=weddingDate}}
 
-                {{input placeholder='Venue' value=venue}}
-
-                {{textarea placeholder='How can we help you?' rows='10' value=content}}
-
-                {{#loading-button
-                    class='btn btn-primary'
-                    loaderStyle='zoom-in'
-                    action=(action 'sendContactRequest')
+                {{#power-select
+                    options=interestedInOptions
+                    placeholder='I\'m interested in...'
+                    searchEnabled=false
+                    selected=servicesInterestedIn
+                    onchange=(action (mut servicesInterestedIn))
+                    as |contactReason|
                 }}
-                    SEND
-                {{/loading-button}}
-            {{/form-group}}
-        </div>
+                    {{contactReason}}
+                {{/power-select}}
+            </div>
+
+            {{input placeholder='Venue' value=venue}}
+
+            {{textarea placeholder='How can we help you?' rows='10' value=content}}
+
+            {{#loading-button
+                class='btn btn-primary'
+                loaderStyle='zoom-in'
+                action=(action 'sendContactRequest')
+            }}
+                SEND
+            {{/loading-button}}
+        </form>
+
     </div>
 </div>

@@ -6,5 +6,5 @@ export default Controller.extend({
     links: computed(function () {
         return [ 'about', 'portfolio', 'pricing' ];
     })
-
+    
 });

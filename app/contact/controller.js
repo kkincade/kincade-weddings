@@ -2,23 +2,6 @@ import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { A } from '@ember/array';
 
-/**
- * Returns an object with key/value pairs for each contact-request field.
- *
- * @private
- * @memberof
- *
- * @returns {models.ContactRequest}
- */
-function getContactRequestInfo() {
-    const fields = [ 'name', 'emailAddress', 'weddingDate', 'servicesInterestedIn', 'venue', 'content' ];
-
-    return fields.reduce((cache, fieldName) => {
-        cache[fieldName] = this.get(fieldName);
-        return cache;
-    }, {});
-}
-
 export default Controller.extend({
 
     name: '',
@@ -45,3 +28,24 @@ export default Controller.extend({
         }
     }
 });
+
+// region Helpers
+
+/**
+ * Returns an object with key/value pairs for each contact-request field.
+ *
+ * @private
+ * @memberof
+ *
+ * @returns {models.ContactRequest}
+ */
+function getContactRequestInfo() {
+    const fields = [ 'name', 'emailAddress', 'weddingDate', 'servicesInterestedIn', 'venue', 'content' ];
+
+    return fields.reduce((cache, fieldName) => {
+        cache[fieldName] = this.get(fieldName);
+        return cache;
+    }, {});
+}
+
+// endregion
